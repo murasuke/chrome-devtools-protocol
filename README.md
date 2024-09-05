@@ -1,9 +1,11 @@
 # chrome-remote-interfaceでChromeを操作する
 
-JavaScriptでChromeを外部から操作して、任意のJavaScriptを実行することができるか調べたところ[Chrome DevTools Protocol](https://chromedevtools.github.io/devtools-protocol/)経由でChromeを操作する
+JavaScriptでChromeを外部から操作して、任意のJavaScriptを実行することができるか調べたところ
 [chrome-remote-interface](https://github.com/cyrus-and/chrome-remote-interface)を使うと簡単にできることが分かりました
 
 https://github.com/cyrus-and/chrome-remote-interface
+
+[Chrome DevTools Protocol](https://chromedevtools.github.io/devtools-protocol/)というリモートデバッグ用プロトコル経由でChromeを操作する(DevToolsの機能を外部から操作することができる)ようです
 
 ([PlayWright](https://playwright.dev/)のようなE2Eテストツールでもできるのですが、純粋にChromeを操作するツールを探してみました)
 
@@ -75,11 +77,11 @@ openURL();
 ```
 
 
-## Gemini nanoを実行して結果を受け取ってみる
+## Chrome上でGemini nanoを実行して、結果を受け取ってみる
 
 [Chrome128(stable)で利用可能になったGemini Nanoを試してみる](https://qiita.com/murasuke/items/5ad4f7d338fe2054211e)という記事でChromeに導入した`Gemini nano`をブラウザ外部から利用してみます
 
-https://qiita.com/murasuke/items/5ad4f7d338fe2054211e
+Gemini nanoのインストール等、準備はこちら(https://qiita.com/murasuke/items/5ad4f7d338fe2054211e)
 
 Geminiの呼び出しは非同期関数なので、呼び出し時に完了を待つために`awaitPromise: true`をつける必要がありました
 
