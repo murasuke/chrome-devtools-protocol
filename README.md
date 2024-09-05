@@ -1,4 +1,4 @@
-# chrome-remote-interfaceでChromeを操作する
+# chrome-remote-interfaceでChromeを外部からJSで操作するサンプル
 
 JavaScriptでChromeを外部から操作して、任意のJavaScriptを実行することができるか調べたところ
 [chrome-remote-interface](https://github.com/cyrus-and/chrome-remote-interface)を使うと簡単にできることが分かりました
