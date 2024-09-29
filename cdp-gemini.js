@@ -1,5 +1,5 @@
 import CDP from 'chrome-remote-interface';
-async function callGemini() {
+async function callGemini(question) {
   let client;
   try {
     // Chromeに接続
@@ -14,11 +14,11 @@ async function callGemini() {
     const expression = `
       (async function() {
         const session = await window.ai.createTextSession();
-        const message = await session.prompt("日本で一番高い山はなんですか？");
+        const message = await session.prompt("${question}");
         return message;
       })();
     `;
-
+    console.log(expression);
     const result = await Runtime.evaluate({
       expression,
       awaitPromise: true, // 非同期処理を待つ
@@ -35,4 +35,6 @@ async function callGemini() {
   }
 }
 
-callGemini();
+if (process.argv.length == 3) {
+  callGemini(process.argv[2]);
+}
